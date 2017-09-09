@@ -434,7 +434,7 @@ footer {
         margin: 0 1.3043478261%; }
         section article aside p, section article aside p:first-of-type {
           text-align: justify; } }
-@media only screen and (max-device-width: 1140px) {
+@media screen and (max-device-width: 1140px) {
   h1 {
     font-size: 40px;
     line-height: 115%;

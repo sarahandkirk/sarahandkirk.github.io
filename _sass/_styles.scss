@@ -312,7 +312,7 @@ footer {
 }
 
 
-@media only screen and (max-device-width: 1140px) {
+@media screen and (max-device-width: 1140px) {
     @include fontsizes($mobile-heading-sizes);
     hr { margin-top: 30px; margin-bottom: 30px; @include column(5); }
     blockquote { @include push(1); @include pull(0);
