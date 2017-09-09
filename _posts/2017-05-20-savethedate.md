@@ -1,6 +1,6 @@
 ---
 title: "date"
-colors: [black, green, red]
+colors: [black, green, green]
 ---
 
 ### the date is set...
