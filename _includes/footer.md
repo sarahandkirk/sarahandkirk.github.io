@@ -1,2 +1,2 @@
 
-template from [Katie Ball](katieball.me/wedding-style) event design by [Kelly Golia Events](kellygolia.com) 
+site [Sarah and Kirk](github.com/sarahandkirk/sarahandkirk.github.io) / event design by [Kelly Golia Events](kellygolia.com) 

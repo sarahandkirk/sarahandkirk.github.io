@@ -202,7 +202,6 @@ section { // defines a block of post material (including the divider).
     width: 100%;
     min-height: 300px;
     padding: 210px 0;
-    background: url(/images/bgnoise.png);
     article { // wraps the actual content.
         @include column(3);
         @include push(1); // for some reason push needs to come after column

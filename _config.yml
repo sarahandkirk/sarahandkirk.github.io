@@ -15,6 +15,7 @@ timezone: null
 
 title: 'wedding ... yay!'
 description: "The website for Sarah and Kirk's wedding"
+favicon: "img/favicon-diamond.ico"
 
 
 colors:

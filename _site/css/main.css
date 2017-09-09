@@ -321,8 +321,7 @@ section {
   position: relative;
   width: 100%;
   min-height: 300px;
-  padding: 210px 0;
-  background: url(/images/bgnoise.png); }
+  padding: 210px 0; }
   section:before, section:after {
     content: "";
     display: table; }
