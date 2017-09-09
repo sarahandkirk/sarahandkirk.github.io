@@ -278,7 +278,7 @@ nav .p-getintouch {
 
 .landing {
   padding-top: 15vh !important;
-  background: url(/img/landing.jpg) no-repeat center top;
+  background: url(/img/landing.jpg) no-repeat center center;
   background-size: cover;
   height: 100vh; }
   .landing article {
@@ -287,7 +287,7 @@ nav .p-getintouch {
     width: 37.3913043478%;
     margin: 0 1.3043478261%;
     margin-left: 61.3043478261%;
-    color: #fffdda; }
+    color: #7da1bf; }
     .landing article h1, .landing article h2, .landing article h3, .landing article h4, .landing article h5, .landing article h6 {
       font-family: Alegreya Sans;
       letter-spacing: 2px;
@@ -510,7 +510,7 @@ footer {
 
   .landing {
     padding-top: 5vh !important;
-    background: url("/images/improbable_boulder_mobile.png") no-repeat center center;
+    background: white no-repeat center center;
     background-size: cover; }
     .landing article {
       margin-right: 21.3043478261%;

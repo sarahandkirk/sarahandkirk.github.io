@@ -136,13 +136,13 @@ li { margin-left: inherit; padding-left: 5px; }
 
 .landing {
     padding-top: 15vh !important;
-    background: url(/img/landing.jpg) no-repeat center top;
+    background: url(/img/landing.jpg) no-repeat center center;
     background-size: cover;
     height: 100vh;
     article {
         @include column(2);
         @include push(3);
-        color: $white;
+        color: $blue;
         h1, h2, h3, h4, h5, h6 {
             font-family: Alegreya Sans;
             letter-spacing: 2px;
@@ -338,7 +338,7 @@ footer {
 
     .landing {
         padding-top: 5vh !important;
-        background: url('/images/improbable_boulder_mobile.png') no-repeat center center;
+        background: white no-repeat center center;
         background-size: cover;
         article {
             @include pull(1);
