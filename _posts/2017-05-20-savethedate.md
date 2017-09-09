@@ -5,7 +5,7 @@ colors: [black, green, green]
 
 ### the date is set...
 
-# ... will appear here shortly 
+# <span style='color: {{ site.colors.white }}'>»</span> September 29, 2018 <span style='color: {{ site.colors.white }}'>«</span> 
 
-###### and location after that
+###### Burlington, MA
 

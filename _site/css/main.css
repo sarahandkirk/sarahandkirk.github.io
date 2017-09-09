@@ -259,25 +259,8 @@ nav .p-savethedate {
   #savethedate blockquote {
     border-left-color: #40b089; }
 
-nav .p-getintouch {
-  border-color: #7da1bf; }
-
-#getintouch {
-  background-color: #7da1bf !important;
-  color: #fffdda; }
-  #getintouch a {
-    color: #fffdda; }
-  #getintouch .sectiondivider, #getintouch .icon-title {
-    color: #7da1bf; }
-  #getintouch h1, #getintouch h2, #getintouch h3, #getintouch h4, #getintouch h5, #getintouch h6 {
-    color: #fffdda; }
-  #getintouch hr {
-    border-color: #fffdda; }
-  #getintouch blockquote {
-    border-left-color: #fffdda; }
-
 .landing {
-  padding-top: 15vh !important;
+  padding-top: 10vh !important;
   background: url(/img/landing.jpg) no-repeat center center;
   background-size: cover;
   height: 100vh; }
@@ -509,7 +492,7 @@ footer {
       border-top-width: 4px; }
 
   .landing {
-    padding-top: 5vh !important;
+    padding-top: 4vh !important;
     background: white no-repeat center center;
     background-size: cover; }
     .landing article {
