@@ -311,7 +311,7 @@ footer {
 }
 
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 730px) {
     @include fontsizes($mobile-heading-sizes);
     hr { margin-top: 30px; margin-bottom: 30px; @include column(5); }
     blockquote { @include push(1); @include pull(0);
