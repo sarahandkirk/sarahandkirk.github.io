@@ -311,7 +311,7 @@ footer {
 }
 
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 720px) {
     @include fontsizes($mobile-heading-sizes);
     hr { margin-top: 30px; margin-bottom: 30px; @include column(5); }
     blockquote { @include push(1); @include pull(0);
@@ -337,7 +337,7 @@ footer {
 
     .landing {
         padding-top: 4vh !important;
-        background: black url(img/landing_sm.jpg) no-repeat center center;
+        background:url(/img/landing_med.jpg) no-repeat center center;
         background-size: cover;
         article {
             @include pull(1);
