@@ -337,7 +337,7 @@ footer {
 
     .landing {
         padding-top: 4vh !important;
-        background:url(/img/landing_med.jpg) no-repeat center center;
+        background:url(/img/landing_med.jpg) no-repeat left center;
         background-size: cover;
         article {
             @include pull(1);
