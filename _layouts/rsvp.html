@@ -1,0 +1,54 @@
+---
+---
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="css/main.css">
+    <link
+    href='http://fonts.googleapis.com/css?family=Alegreya+Sans:500,500italic,900,900italic|Alegreya+Sans+SC:500,500italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
+    <title>{{ site.title }}</title>
+</head>
+
+
+<body>
+<nav><ul>
+    {% for post in site.posts reversed %}
+    {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
+    <li class="p-{{id}}"><a href="/#{{id}}">{{post.title}}</a></li>
+    {% endfor %}
+</ul></nav>
+
+    <form method="POST" action="http://">
+    <label for="guest_1_first">Guest One:</label> 
+    <input id="guest_1_first" name="guest_1_first" size="15">
+    <label for="guest_1_last">Guest One:</label> 
+    <input id="guest_1_last" name="guest_1_last" size="15">    
+{% if page.n_guests is 2 %}
+<label for="guest_1_first">Guest One:</label> 
+    <input id="guest_1_first" name="guest_1_first" size="15">
+    <label for="guest_1_last">Guest One:</label> 
+    <input id="guest_1_last" name="guest_1_last" size="15"> 
+{% endif %}
+
+    <label for="password">Response:</label> 
+    <input placeholder="Password" type="radio" id="password" name="password" size="15">
+    <input type="submit" value="Login">
+    </form>
+
+
+
+<footer>
+    {% capture foottext %}{% include footer.md %}{% endcapture %}
+    {{ foottext | markdownify }}
+</footer>
+
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+</html>
