@@ -1,4 +1,5 @@
 ---
+layout: rsvp 
 token: acting1
 guest_1_first: ale
 guest_1_last: mad

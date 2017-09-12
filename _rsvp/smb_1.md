@@ -1,4 +1,5 @@
 ---
+layout: rsvp 
 token: smb_1
 guest_1_first: testfirst
 guest_1_last: testlast

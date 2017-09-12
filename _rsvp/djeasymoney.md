@@ -1,4 +1,5 @@
 ---
+layout: rsvp 
 token: djeasymoney
 guest_1_first: e
 guest_1_last: wil
