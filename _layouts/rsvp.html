@@ -13,7 +13,7 @@ layout: page
        <link rel="stylesheet" href="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css">
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
+    {% if site.favicon %}<link rel="shortcut icon" href="../{{ site.favicon }}" type="image/x-icon">{% endif %}
     <title>{{ site.title }}</title>
 </head>
 
@@ -26,12 +26,21 @@ layout: page
     {% endfor %}
 </ul></nav>
 
+<section class="landing">
+        <article><h2>{% capture landingtext %}{% include rsvplanding.md %}{% endcapture %}
+    {{ landingtext | markdownify }}</h2> </article>
+    </section>
+
 {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
     <section id="rsvp">
 
 
 <form id="gform" method="POST" class="pure-form pure-form-stacked"
   action="https://script.google.com/macros/s/AKfycbyCLX2N-JgbN4X5AjqqXeMQHYlCHn2kip5KiZ0kjKBiYBc69wqr/exec">
+<fieldset class="pure-group">
+    <label for="token"></label> 
+    <input id="token" name="token" value="{{page.token}}" size="15">
+</fieldset>
 Guest 1:
 <fieldset class="pure-group">
     <label for="guest_1_first">First:</label> 
@@ -67,6 +76,8 @@ Guest 2:
   </div>
 
 <footer>
+    <em>{{page.comment | markdownify}}</em>
+    <br><br>
     {% capture foottext %}{% include footer.md %}{% endcapture %}
     {{ foottext | markdownify }}
 </footer>
