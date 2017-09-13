@@ -31,9 +31,8 @@ layout: page
     {{ landingtext | markdownify }}</h2> </article>
     </section>
 
-{% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
-    <section id="rsvp">
 
+<section id="rsvp">
 
 <form id="gform" method="POST" class="pure-form pure-form-stacked"
   action="https://script.google.com/macros/s/AKfycbyCLX2N-JgbN4X5AjqqXeMQHYlCHn2kip5KiZ0kjKBiYBc69wqr/exec">
@@ -41,39 +40,36 @@ layout: page
     <label for="token"></label> 
     <input id="token" name="token" value="{{page.token}}" size="15">
 </fieldset>
-Guest 1:
+<h2>Guest 1</h2>
 <fieldset class="pure-group">
-    <label for="guest_1_first">First:</label> 
-    <input id="guest_1_first" name="guest_1_first" size="15">
-</fieldset>
-<fieldset class="pure-group">
-    <label for="guest_1_last">Last:</label> 
-    <input id="guest_1_last" name="guest_1_last" size="15"> 
+    <label for="guest_1_first"></label> 
+    <input id="guest_1_first" name="guest_1_first" size="15" value="first">
+
+    <label for="guest_1_last"></label> 
+    <input id="guest_1_last" name="guest_1_last" size="15" value="last"> 
 </fieldset>   
 {% if page.n_guests == 2 %}
-Guest 2: 
+<br><br>
+<h2>Guest 2</h2>
 <fieldset class="pure-group">
-<label for="guest_2_first">First:</label> 
-    <input id="guest_2_first" name="guest_2_first" size="15">
-</fieldset> 
+<label for="guest_2_first"></label> 
+    <input id="guest_2_first" name="guest_2_first" size="15" value="first">
 
-<fieldset class="pure-group">
-    <label for="guest_2_last">Last:</label> 
-    <input id="guest_2_last" name="guest_2_last" size="15"> 
+    <label for="guest_2_last"></label> 
+    <input id="guest_2_last" name="guest_2_last" size="15" value="last"> 
 </fieldset> 
 
 {% endif %}
 
-
-    <input type="submit" value="submit"><i class="fa fa-paper-plane"></i>
+    <input type="submit" value="submit">
     </form>
 </section>
     
  <!-- Customise the Thankyou Message People See when they submit the form: -->
-  <div style="display:none;" id="thankyou_message">
+<div style="display:none;" id="thankyou_message">
     {% capture thankstext %}{% include rsvpthanks.md %}{% endcapture %}
     {{ thankstext | markdownify }}
-  </div>
+</div>
 
 <footer>
     <em>{{page.comment | markdownify}}</em>
@@ -81,8 +77,6 @@ Guest 2:
     {% capture foottext %}{% include footer.md %}{% endcapture %}
     {{ foottext | markdownify }}
 </footer>
-
-
 
 
 
