@@ -8,6 +8,9 @@ import csv
 # Open our data file in read-mode.
 csvfile = open('data.csv', 'r')
 
+# list of valid columns
+valid_columns = ['token', 'n_guests', 'comment']
+
 # Save a CSV Reader object.
 datareader = csv.reader(csvfile, delimiter=',', quotechar='"')
 
@@ -20,6 +23,12 @@ for row_index, row in enumerate(datareader):
 	# If this is the first row, populate our data_headings variable.
 	if row_index == 0:
 		data_headings = row
+		# Compile a line of YAML text from our headings list 
+                #   and the text of the current cell, followed by a linebreak.
+		# Heading text is converted to lowercase. Spaces are converted 
+                #    to underscores and hyphens are removed.
+		# In the cell text, line endings are replaced with commas.
+		cell_heading = {i:dat_head.lower().replace(" ", "_").replace("-", "_").replace("%", "percent").replace("$", "").replace(",", "") for i,dat_head in enumerate(data_headings) if dat_head in valid_columns}
 
 	# Othrwise, create a YAML file from the data in this row...
 	else:
@@ -32,19 +41,18 @@ for row_index, row in enumerate(datareader):
 		yaml_text += "---\n"
 		yaml_text += "layout: rsvp \n"
 
-		# Loop through each cell in this row...
-		for cell_index, cell in enumerate(row):
+		# Loop through the headings and parse the current row
+		for cell_index,cell_head in cell_heading.items():
+			cell = row[cell_index].replace("\n", ", ") 
 
-			# Compile a line of YAML text from our headings list 
-                        #   and the text of the current cell, followed by a linebreak.
-			# Heading text is converted to lowercase. Spaces are converted 
-                        #    to underscores and hyphens are removed.
-			# In the cell text, line endings are replaced with commas.
-			cell_heading = data_headings[cell_index].lower().replace(" ", "_").replace("-", "_").replace("%", "percent").replace("$", "").replace(",", "")
-			cell_text = cell_heading + ": " + cell.replace("\n", ", ") + "\n"
+			# only add frontmatter for nonempty cells (empty strings return false)
+			if cell:
+				
+				# prepend the heading column
+				cell_text = cell_head + ": " + cell + "\n"
 
-			# Add this line of text to the current YAML string.
-			yaml_text += cell_text
+				# Add this line of text to the current YAML string.
+				yaml_text += cell_text
 
 		# Write our YAML string to the new text file and close it.
 		new_yaml.write(yaml_text + "---\n")
