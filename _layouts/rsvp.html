@@ -31,6 +31,11 @@ layout: page
     {{ landingtext | markdownify }}</h2> </article>
     </section>
 
+<section class="invite">
+    article><h2>{% capture invitetext %}{% include invite.md %}{% endcapture %}
+    {{ invitetext | markdownify }}</h2> </article>
+</section>
+
 
 <section id="rsvp">
 
