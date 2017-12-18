@@ -1,2 +1,2 @@
 
-site [Sarah and Kirk](github.com/sarahandkirk/sarahandkirk.github.io) / event design by [Kelly Golia Events](kellygolia.com) 
+[<i class="fa fa-code" aria-hidden="true"></i>](https://github.com/sarahandkirk/sarahandkirk.github.io) 
