@@ -1,5 +1,4 @@
 ---
-layout: page
 ---
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -10,8 +9,6 @@ layout: page
     <link rel="stylesheet" href="../css/main.css">
     <link
     href='http://fonts.googleapis.com/css?family=Alegreya+Sans:500,500italic,900,900italic|Alegreya+Sans+SC:500,500italic,900,900italic' rel='stylesheet' type='text/css'>
-       <link rel="stylesheet" href="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/style.css">
-
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     {% if site.favicon %}<link rel="shortcut icon" href="../{{ site.favicon }}" type="image/x-icon">{% endif %}
     <title>{{ site.title }}</title>
@@ -22,59 +19,64 @@ layout: page
 <nav><ul>
     {% for post in site.posts reversed %}
     {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
-    <li class="p-{{id}}"><a href="/#{{id}}">{{post.title}}</a></li>
+    <li class="p-{{id}} prevent"><a href="{{site.baseurl}}/index.html#{{id}}">{{post.title}}</a></li>
     {% endfor %}
 </ul></nav>
 
+<main role="main">
 <section class="landing">
-        <article><h2>{% capture landingtext %}{% include rsvplanding.md %}{% endcapture %}
+    <article><h2>{% capture landingtext %}{% include rsvplanding.md %}{% endcapture %}
     {{ landingtext | markdownify }}</h2> </article>
-    </section>
+</section>
 
 <section class="invite">
-    article><h2>{% capture invitetext %}{% include invite.md %}{% endcapture %}
+    <article><h2>{% capture invitetext %}{% include invite.md %}{% endcapture %}
     {{ invitetext | markdownify }}</h2> </article>
 </section>
 
 
 <section id="rsvp">
-
+<article>
 <form id="gform" method="POST" class="pure-form pure-form-stacked"
   action="https://script.google.com/macros/s/AKfycbyCLX2N-JgbN4X5AjqqXeMQHYlCHn2kip5KiZ0kjKBiYBc69wqr/exec">
-<fieldset class="pure-group">
-    <label for="token"></label> 
+  <fieldset class="pure-group">
+    <label for="token"></label>
     <input id="token" name="token" value="{{page.token}}" size="15">
-</fieldset>
-<h2>Guest 1</h2>
-<fieldset class="pure-group">
-    <label for="guest_1_first"></label> 
+  </fieldset>
+  <h2>Guest 1</h2>
+  <fieldset class="pure-group">
+    <label for="guest_1_first"></label>
     <input id="guest_1_first" name="guest_1_first" size="15" value="first">
 
-    <label for="guest_1_last"></label> 
-    <input id="guest_1_last" name="guest_1_last" size="15" value="last"> 
-</fieldset>   
-{% if page.n_guests == 2 %}
-<br><br>
-<h2>Guest 2</h2>
-<fieldset class="pure-group">
-<label for="guest_2_first"></label> 
-    <input id="guest_2_first" name="guest_2_first" size="15" value="first">
+    <label for="guest_1_last"></label>
+    <input id="guest_1_last" name="guest_1_last" size="15" value="last">
+    </fieldset>
+    {% if page.n_guests == 2 %}
+      <br><br>
+      <h2>Guest 2</h2>
+      <fieldset class="pure-group">
+        <label for="guest_2_first"></label>
+        <input id="guest_2_first" name="guest_2_first" size="15" value="first">
 
-    <label for="guest_2_last"></label> 
-    <input id="guest_2_last" name="guest_2_last" size="15" value="last"> 
-</fieldset> 
+        <label for="guest_2_last"></label>
+        <input id="guest_2_last" name="guest_2_last" size="15" value="last">
+      </fieldset>
 
-{% endif %}
+    {% endif %}
 
     <input type="submit" value="submit">
-    </form>
+
+</form>
+
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+   <div style="display:none;" id="thankyou_message">
+       {% capture thankstext %}{% include rsvpthanks.md %}{% endcapture %}
+       {{ thankstext | markdownify }}
+   </div>
+</article>
 </section>
-    
- <!-- Customise the Thankyou Message People See when they submit the form: -->
-<div style="display:none;" id="thankyou_message">
-    {% capture thankstext %}{% include rsvpthanks.md %}{% endcapture %}
-    {{ thankstext | markdownify }}
-</div>
+
+</main>
 
 <footer>
     <em>{{page.comment | markdownify}}</em>
@@ -83,9 +85,9 @@ layout: page
     {{ foottext | markdownify }}
 </footer>
 
-
-
+<script data-cfasync="false" type="text/javascript" src="../form-submission-handler.js"></script>
 </body>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <script src="../site.js"></script>
 </html>

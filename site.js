@@ -19,7 +19,7 @@ $.extend($.easing,
     var navs = {}, sections = {};
 
 
-    $.fn.navScroller = function(options) {
+    $(.prevent).fn.navScroller = function(options) {
         settings = $.extend({
             scrollToOffset: 170,
             scrollSpeed: 800,
