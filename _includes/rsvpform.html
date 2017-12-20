@@ -1,0 +1,38 @@
+<form id="gform" method="POST" class="pure-form pure-form-stacked"
+  action="https://script.google.com/macros/s/AKfycbyCLX2N-JgbN4X5AjqqXeMQHYlCHn2kip5KiZ0kjKBiYBc69wqr/exec">
+  <fieldset class="pure-group">
+    <label for="token"></label>
+    <input id="token" name="token" value="{{page.token}}" size="15">
+  </fieldset>
+  <h2>Guest 1</h2>
+  <fieldset class="pure-group">
+    <label for="guest_1_first"></label>
+    <input id="guest_1_first" name="guest_1_first" size="15" value="first">
+
+    <label for="guest_1_last"></label>
+    <input id="guest_1_last" name="guest_1_last" size="15" value="last">
+    </fieldset>
+    {% if page.n_guests == 2 %}
+      <br><br>
+      <h2>Guest 2</h2>
+      <fieldset class="pure-group">
+        <label for="guest_2_first"></label>
+        <input id="guest_2_first" name="guest_2_first" size="15" value="first">
+
+        <label for="guest_2_last"></label>
+        <input id="guest_2_last" name="guest_2_last" size="15" value="last">
+      </fieldset>
+
+    {% endif %}
+
+    <br><br>
+    <h2>Reply</h2>
+    <fieldset class="pure-group">
+      <label for="attending"></label>
+      <input type="radio" id="attending" name="attending" size="15" value="yes">Attending
+      <input type="radio" id="attending" name="attending" size="15" value="no">Decline
+    </fieldset>
+
+    <input type="submit" value="submit">
+
+</form>

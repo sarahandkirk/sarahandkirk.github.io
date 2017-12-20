@@ -1,4 +1,5 @@
 ---
+layout: invite
 ---
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -7,11 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
     <link rel="stylesheet" href="../css/main.css">
+
+
     <link
     href='http://fonts.googleapis.com/css?family=Alegreya+Sans:500,500italic,900,900italic|Alegreya+Sans+SC:500,500italic,900,900italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     {% if site.favicon %}<link rel="shortcut icon" href="../{{ site.favicon }}" type="image/x-icon">{% endif %}
     <title>{{ site.title }}</title>
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
 </head>
 
 
@@ -29,10 +34,16 @@
     {{ landingtext | markdownify }}</h2> </article>
 </section>
 
-<section class="invite">
-    <article><h2>{% capture invitetext %}{% include invite.md %}{% endcapture %}
-    {{ invitetext | markdownify }}</h2> </article>
+
+
+{% for insert in site.inserts%}
+{% capture id %}{{ insert.id | remove:'/' | downcase }}{% endcapture %}
+<section id="{{id}}">
+    <article>{{ insert.content | markdownify }}
+    </article>
 </section>
+{% endfor %}
+
 
 
 <section id="rsvp">
@@ -45,11 +56,13 @@
   </fieldset>
   <h2>Guest 1</h2>
   <fieldset class="pure-group">
-    <label for="guest_1_first"></label>
-    <input id="guest_1_first" name="guest_1_first" size="15" value="first">
+    <label for="guest_1_first">
+    <input class="form-control" type="text" id="guest_1_first"
+     name="guest_1_first" size="15" value="first"></label>
 
-    <label for="guest_1_last"></label>
-    <input id="guest_1_last" name="guest_1_last" size="15" value="last">
+    <label for="guest_1_last">
+    <input class="form-control" type="text" id="guest_1_last"
+    name="guest_1_last" size="15" value="last"></label>
     </fieldset>
     {% if page.n_guests == 2 %}
       <br><br>
@@ -64,7 +77,25 @@
 
     {% endif %}
 
-    <input type="submit" value="submit">
+    <br><br>
+    <h2>Reply</h2>
+
+    <fieldset>
+
+<div class="radio">
+      <input id="attendingy" name="attending" type="radio"
+          class="custom-control-input" value="yes">
+      <label for="attendingy">    Attending</label>
+
+
+        <input id="attendingn" name="attending" type="radio"
+          class="custom-control-input" value="no">
+          <label for="attendingn">Decline</label>
+      </div>
+    </fieldset>
+
+
+    <input id="submit" type="submit" value="submit">
 
 </form>
 
@@ -86,6 +117,11 @@
 </footer>
 
 <script data-cfasync="false" type="text/javascript" src="../form-submission-handler.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
