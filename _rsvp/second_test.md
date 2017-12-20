@@ -1,5 +1,6 @@
 ---
 layout: rsvp 
-token: acting1
+token: second_test
 n_guests: 1
+comment: tes
 ---
