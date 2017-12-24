@@ -1,5 +1,5 @@
 ---
-layout: invite
+layout: page
 ---
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -36,12 +36,10 @@ layout: invite
 
 
 
+
 {% for insert in site.inserts%}
-{% capture id %}{{ insert.id | remove:'/' | downcase }}{% endcapture %}
-<section id="{{id}}">
-    <article>{{ insert.content | markdownify }}
-    </article>
-</section>
+  <div class="sidebar"> {{insert.title}}</div>
+   {{ insert.output }}
 {% endfor %}
 
 
