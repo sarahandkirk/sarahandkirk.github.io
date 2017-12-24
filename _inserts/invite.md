@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: insert
+title: Invite
 ---
 
 # Please Join us
@@ -12,8 +13,5 @@ layout: post
 
 #### at
 ## L'Andana Restaraunt
-### ### street name, St
-### Burligton MA
-
-
-### a brief ceremony followed by
+### 86 Cambridge Street
+### Burlington, MA 01803
