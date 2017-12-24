@@ -18,12 +18,12 @@ description: "The website for Sarah and Kirk's wedding"
 favicon: "img/favicon-diamond.ico"
 
 collections:
-  rsvp:
-    output: true
-    permalink: /:collection/:name
   inserts:
     output: true
     permalink: /:name
+  rsvp:
+    output: true
+    permalink: /:collection/:name
 
 colors:
     green: '#40b089' # mint leaf
