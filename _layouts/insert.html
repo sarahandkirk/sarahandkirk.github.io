@@ -1,6 +1,7 @@
-
+---
+---
 {% capture id %}{{ page.id | remove:'/' | downcase }}{% endcapture %}
-<div id="{{id}}" style="text-align:center; color:{{site.colors.berry}}">
+<div id="{{id}}" {% include invite-div.html %} class="invite">
     {% if page.icon %}
     <div class="subtlecircle sectiondivider imaged">
         <img src="{{page.icon}}" alt="section icon" />
