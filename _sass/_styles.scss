@@ -1,7 +1,11 @@
+@import 'invite-h1';
+
 body {
     background: $fullwhite;
     font: $text-size $text-font;
     color: $black;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     -webkit-font-smoothing: antialiased; // Fix for webkit rendering
     -webkit-text-size-adjust: 100%;
 }
@@ -45,20 +49,21 @@ input[type=radio] + label:before {
 }
 
 input[type=radio] + label:before {
-  content: "\f10c"; /* Radio Unchecked */
+  content: "\f0c8"; /* Radio Unchecked */
+
 }
 input[type=radio]:checked + label:before {
-  content: "\f140"; /* Radio Checked */
-  color: $berry;
+  content: "\f00c"; /* Radio Checked */
+  color: $white;
 }
 
 input[type=radio]:checked + label:before {
   content: "\f140"; /* Radio Checked */
-  color: $berry;
+  color: $white;
 }
 input[type=radio]:checked + label:before {
-  content: "\f140"; /* Radio Checked */
-  color: $berry;
+  content: "\f00c"; /* Radio Checked */
+  color: $white;
 }
 
 
@@ -157,7 +162,9 @@ bdo[dir='ltr'], bdo[dir='rtl'] {
 @include fontsizes($heading-sizes);
 h1, h2, h3, h4, h5, h6 {
     font-family: $titling-font;
-    font-weight: 900;
+    text-transform: lowercase;
+    letter-spacing: 0px;
+    font-weight: 300;
     a { font-weight: inherit; }
 }
 
@@ -169,9 +176,20 @@ small { font-size: 80%; }
 
 p { margin: 0 0 20px 0;
     //padding: 0 10px;
-    text-align: justify;
+    text-align: center;
     img { margin: 0; }
+
 }
+
+/*
+h1, h2 {
+  font-family: 'Allura', cursive;
+}
+
+h3, h4, p{
+font-family: 'Montserrat', sans-serif;
+
+}*/
 
 
 a, a:visited { text-decoration: underline; outline: 0; }
@@ -242,11 +260,7 @@ li { margin-left: inherit; padding-left: 5px; }
     article {
         @include column(2);
         @include push(3);
-        color: $blue;
-        h1, h2, h3, h4, h5, h6 {
-            font-family: Alegreya Sans;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px black, 0 0 5px $black; }
+        color: $cranberry;
     }
 }
 
@@ -261,7 +275,7 @@ nav {
     z-index: 100;
     top: 0;
     left: 0;
-    background: $black;
+    background: $white;
     ul {
         list-style: none;
         text-align: center;
@@ -273,16 +287,13 @@ nav {
             padding: $navborder 0;
             zoom: 1;
             line-height: normal;
-            letter-spacing: 2px;
-            text-transform: lowercase;
             min-width: 110px;
             line-height: 50px;
             margin: 0;
             a, a:visited {
                 display: block;
-                color: $white;
+                color: $black;
                 text-decoration: none;
-                opacity: 0.75;
             }
             a:hover { opacity: 1;
                       text-shadow: 0 0 4px transparentize($white, 0.8)}
@@ -297,11 +308,15 @@ nav {
 
 section { // defines a block of post material (including the divider).
     @include row();
-    margin: 0;
+    margin: auto;
+    margin-top: 100px;
     position: relative;
-    width: 100%;
-    min-height: 300px;
-    padding: 210px 0;
+    width: 80%;
+    padding: 50px 0;
+    h2:first-of-type {//title
+      position:absolute;
+      top: -75px;
+    }
     article { // wraps the actual content.
         @include column(3);
         @include push(1); // for some reason push needs to come after column
@@ -312,7 +327,7 @@ section { // defines a block of post material (including the divider).
             text-align: center;
             padding: 0 10px;
         }
-        p:first-of-type { margin-top: 40px; }
+
         aside { // wraps marginalia.
             @include column(1);
             position: absolute;
@@ -331,26 +346,42 @@ section { // defines a block of post material (including the divider).
     }
 }
 
+.right {
+    margin-right:$sm-pad;
+    width: $sm-width;
+}
+
+h2.right{
+  text-align:right;
+}
+
+.left {
+    margin-left: $sm-pad;
+    width: $sm-width;
+}
 
 section:first-of-type {
-    padding-top: 140px;
+    h2{
+      display:none
+    }
 }
 
 
 footer {
-    padding: 6px 0;
     min-height: 0;
-    background-color: $black;
     background-image:none;
     p, p:first-of-type {
         font-size: 14px;
         margin: 0;
-        color: $white;
-        opacity: 0.75;
+        color: $black;
         text-align: center;
     }
     a {
-        color: $white;
+        color: $black;
+    }
+    h3{
+        padding: 100px 0;
+      text-align: center;
     }
 }
 

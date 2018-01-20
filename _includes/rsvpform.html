@@ -6,11 +6,13 @@
   </fieldset>
   <h2>Guest 1</h2>
   <fieldset class="pure-group">
-    <label for="guest_1_first"></label>
-    <input id="guest_1_first" name="guest_1_first" size="15" value="first">
+    <label for="guest_1_first">
+    <input class="form-control" type="text" id="guest_1_first"
+     name="guest_1_first" size="15" value="first"></label>
 
-    <label for="guest_1_last"></label>
-    <input id="guest_1_last" name="guest_1_last" size="15" value="last">
+    <label for="guest_1_last">
+    <input class="form-control" type="text" id="guest_1_last"
+    name="guest_1_last" size="15" value="last"></label>
     </fieldset>
     {% if page.n_guests == 2 %}
       <br><br>
@@ -27,12 +29,28 @@
 
     <br><br>
     <h2>Reply</h2>
-    <fieldset class="pure-group">
-      <label for="attending"></label>
-      <input type="radio" id="attending" name="attending" size="15" value="yes">Attending
-      <input type="radio" id="attending" name="attending" size="15" value="no">Decline
+
+    <fieldset>
+
+<div class="radio">
+      <input id="attendingy" name="attending" type="radio"
+          class="custom-control-input" value="yes">
+      <label for="attendingy"> <h3> yes, I will be there</h3></label>
+
+
+        <input id="attendingn" name="attending" type="radio"
+          class="custom-control-input" value="no">
+          <label for="attendingn"><h3>no, sadly I cannot attend<h3></label>
+      </div>
     </fieldset>
 
-    <input type="submit" value="submit">
+
+    <input id="submit" type="submit" value="submit">
 
 </form>
+
+  <!-- Customise the Thankyou Message People See when they submit the form: -->
+ <div style="display:none;" id="thankyou_message">
+     {% capture thankstext %}{% include rsvpthanks.md %}{% endcapture %}
+     {{ thankstext | markdownify }}
+ </div>

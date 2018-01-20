@@ -9,7 +9,7 @@ layout: top
     <meta name="description" content="{{ site.description }}">
     <link rel="stylesheet" href="../css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Allura|Montserrat" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     {% if site.favicon %}<link rel="shortcut icon" href="../{{ site.favicon }}" type="image/x-icon">{% endif %}
     <title>{{ site.title }}</title>
@@ -42,64 +42,65 @@ layout: top
 
 
 
-<section id="rsvp">
+<section id="rsvp" class="right">
 <article>
-<form id="gform" method="POST" class="pure-form pure-form-stacked"
-  action="https://script.google.com/macros/s/AKfycbyCLX2N-JgbN4X5AjqqXeMQHYlCHn2kip5KiZ0kjKBiYBc69wqr/exec">
-  <fieldset class="pure-group">
-    <label for="token"></label>
-    <input id="token" name="token" value="{{page.token}}" size="15">
-  </fieldset>
-  <h2>Guest 1</h2>
-  <fieldset class="pure-group">
-    <label for="guest_1_first">
-    <input class="form-control" type="text" id="guest_1_first"
-     name="guest_1_first" size="15" value="first"></label>
-
-    <label for="guest_1_last">
-    <input class="form-control" type="text" id="guest_1_last"
-    name="guest_1_last" size="15" value="last"></label>
+  <form id="gform" method="POST" class="pure-form pure-form-stacked"
+    action="https://script.google.com/macros/s/AKfycbyCLX2N-JgbN4X5AjqqXeMQHYlCHn2kip5KiZ0kjKBiYBc69wqr/exec">
+    <fieldset class="pure-group">
+      <label for="token"></label>
+      <input id="token" name="token" value="{{page.token}}" size="15">
     </fieldset>
-    {% if page.n_guests == 2 %}
-      <br><br>
-      <h2>Guest 2</h2>
-      <fieldset class="pure-group">
-        <label for="guest_2_first"></label>
-        <input id="guest_2_first" name="guest_2_first" size="15" value="first">
+    <h2>Guest 1</h2>
+    <fieldset class="pure-group">
+      <label for="guest_1_first">
+      <input class="form-control" type="text" id="guest_1_first"
+       name="guest_1_first" size="15" value="first"></label>
 
-        <label for="guest_2_last"></label>
-        <input id="guest_2_last" name="guest_2_last" size="15" value="last">
+      <label for="guest_1_last">
+      <input class="form-control" type="text" id="guest_1_last"
+      name="guest_1_last" size="15" value="last"></label>
+      </fieldset>
+      {% if page.n_guests == 2 %}
+        <br><br>
+        <h2>Guest 2</h2>
+        <fieldset class="pure-group">
+          <label for="guest_2_first"></label>
+          <input id="guest_2_first" name="guest_2_first" size="15" value="first">
+
+          <label for="guest_2_last"></label>
+          <input id="guest_2_last" name="guest_2_last" size="15" value="last">
+        </fieldset>
+
+      {% endif %}
+
+      <br><br>
+      <h2>Reply</h2>
+
+      <fieldset>
+
+  <div class="radio">
+        <input id="attendingy" name="attending" type="radio"
+            class="custom-control-input" value="yes">
+        <label for="attendingy"> <h3> yes, I will be there</h3></label>
+
+
+          <input id="attendingn" name="attending" type="radio"
+            class="custom-control-input" value="no">
+            <label for="attendingn"><h3>no, sadly I cannot attend<h3></label>
+        </div>
       </fieldset>
 
-    {% endif %}
 
-    <br><br>
-    <h2>Reply</h2>
+      <input id="submit" type="submit" value="submit">
 
-    <fieldset>
-
-<div class="radio">
-      <input id="attendingy" name="attending" type="radio"
-          class="custom-control-input" value="yes">
-      <label for="attendingy">    Attending</label>
-
-
-        <input id="attendingn" name="attending" type="radio"
-          class="custom-control-input" value="no">
-          <label for="attendingn">Decline</label>
-      </div>
-    </fieldset>
-
-
-    <input id="submit" type="submit" value="submit">
-
-</form>
+  </form>
 
     <!-- Customise the Thankyou Message People See when they submit the form: -->
    <div style="display:none;" id="thankyou_message">
        {% capture thankstext %}{% include rsvpthanks.md %}{% endcapture %}
        {{ thankstext | markdownify }}
    </div>
+
 </article>
 </section>
 

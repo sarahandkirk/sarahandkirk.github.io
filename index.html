@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ site.description }}">
     <link rel="stylesheet" href="css/main.css">
-    <link
-    href='http://fonts.googleapis.com/css?family=Alegreya+Sans:500,500italic,900,900italic|Alegreya+Sans+SC:500,500italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Allura|Montserrat" rel="stylesheet">
+
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
     <title>{{ site.title }}</title>
@@ -25,13 +25,11 @@
 
 
 <main role="main">
-    <section class="landing">
-        <article><h2>save the date</h2> </article>
-    </section>
 
     {% for post in site.posts reversed %}
     {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
-    <section id="{{id}}">
+    <section id="{{id}}" class="{{ post.side }}">
+      <h2 style="text-align:{{post.side}}; width:100%">{{post.title}}</h2>
         {% if post.icon %}
         <div class="subtlecircle sectiondivider imaged">
             <img src="{{post.icon}}" alt="section icon" />

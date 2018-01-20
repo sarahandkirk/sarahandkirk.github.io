@@ -26,18 +26,11 @@ collections:
     permalink: /:collection/:name
 
 colors:
-    green: '#40b089' # mint leaf
-    black: '#2e2e2e'
-    blue: '#7da1bf'   # dusk blue
-    brown: '#635147'  # umber
-    red: '#fa8072'    # salmon
-    white: '#fffdda'  # cream
-    yellow: '#fada6e' # half royal half mellow
     fullblack: '#000'
+    black: '#000'
     fullwhite: '#fff'
-    berry: '#7a082c' #
-    peach: '#f9d6e1' #
-    sage: '#227752' #
-    herbal: '#0a422a'
-    gold: '#cc9f1a'
-    tan: '#f4e4b2' #
+    white: '#fff'
+    cranberry: '#8f1f31'
+    berry: '#8f1f31' #
+    sage: '#53745c' #
+    gold: '#bf843d'
