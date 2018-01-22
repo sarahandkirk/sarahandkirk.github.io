@@ -482,4 +482,13 @@ footer {
         top: -30px;
       }
     }
+    .right {
+        margin-right:$sm-pad-mobile;
+        width: $sm-width-mobile;
+    }
+
+    .left {
+        margin-left: $sm-pad-mobile;
+        width: $sm-width-mobile;
+    }
 }
