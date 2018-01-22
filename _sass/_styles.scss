@@ -28,7 +28,7 @@ img {
 #token{display:none}
 
 #guest_1_first, #guest_1_last, #guest_2_first, #guest_2_last{
-    font-size: 30px;
+    font-size: 20px;
     text-align:center;
 }
 
@@ -39,29 +39,23 @@ img {
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css);
 
+input{
+  font-family: $text-font;
+  font-size: 30px;
+}
+
 input[type=radio]{
   display: none;
   margin: 5px;
 }
 
 input[type=radio] + label:before {
-  display: inline-block;
-}
-
-input[type=radio] + label:before {
   content: "\f0c8"; /* Radio Unchecked */
 
 }
-input[type=radio]:checked + label:before {
-  content: "\f00c"; /* Radio Checked */
-  color: $white;
-}
 
 input[type=radio]:checked + label:before {
-  content: "\f140"; /* Radio Checked */
-  color: $white;
-}
-input[type=radio]:checked + label:before {
+font-family: FontAwesome;
   content: "\f00c"; /* Radio Checked */
   color: $white;
 }
@@ -71,27 +65,32 @@ input[type=radio]:checked + label:before {
 input[type=radio]:focus ~ label:before,
 input[type=radio]:focus ~ label
 {
-    color: $berry;
+    color: $gold;
 }
 
 .radio label{
-  font-size: 30px;
-  padding: 15px;
+  font-size: 40px;
+  padding: 5px;
 }
 
-input[type=submit]{
-  margin:25px;
+input[type=submit] {
+  font-family: FontAwesome;
+  font-size: 60px;
   content: "\f1d8";
-  color:$sage;
-  background-color: white;
-  border:3px;
-  border-color:$berry;
-  font-size: 30px;
+  color:$white;
+  background-color: $rsvpcolor;
+  border:none;
 }
+
+.reply label:before{
+
+}
+
+
 
 
 textarea {
-  width: 100%;
+  width: 75%;
 }
 .content-head {
   font-weight: 400;
@@ -192,7 +191,7 @@ font-family: 'Montserrat', sans-serif;
 }*/
 
 
-a, a:visited { text-decoration: underline; outline: 0; }
+a, a:visited { text-decoration: none; outline: 0; }
 a:hover, a:focus { }
 p a, p a:visited { line-height: inherit; }
 
@@ -312,7 +311,7 @@ section { // defines a block of post material (including the divider).
     margin-top: 100px;
     position: relative;
     width: 80%;
-    padding: 50px 0;
+    padding: 50px 0px;
     h2:first-of-type {//title
       position:absolute;
       top: -75px;
@@ -325,7 +324,7 @@ section { // defines a block of post material (including the divider).
         h1, h2, h3, h4, h5, h6 {
             margin-bottom: 20px;
             text-align: center;
-            padding: 0 10px;
+            padding: 0 0px;
         }
 
         aside { // wraps marginalia.

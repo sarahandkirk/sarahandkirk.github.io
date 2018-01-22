@@ -10,6 +10,8 @@ layout: top
     <link rel="stylesheet" href="../css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Allura|Montserrat" rel="stylesheet">
 
+<script src="https://use.fontawesome.com/83f65985ad.js"></script>
+
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     {% if site.favicon %}<link rel="shortcut icon" href="../{{ site.favicon }}" type="image/x-icon">{% endif %}
     <title>{{ site.title }}</title>
@@ -27,30 +29,57 @@ layout: top
 </ul></nav>
 
 <main role="main">
-<section class="landing">
-    <article><h2>{% capture landingtext %}{% include rsvplanding.md %}{% endcapture %}
-    {{ landingtext | markdownify }}</h2> </article>
-</section>
+
+  {% for post in site.posts reversed %}
+  {% if post.rsvp contains 'yes' %}
+  {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
+  <section id="{{id}}" class="{{ post.side }}">
+    <h2 style="text-align:{{post.side}}; width:100%">{{post.title}}</h2>
+      {% if post.icon %}
+      <div class="subtlecircle sectiondivider imaged">
+          <img src="{{post.icon}}" alt="section icon" />
+          <h5 class="icon-title">{{ post.title }}</h5>
+      </div>
+      {% elsif post.fa-icon %}
+      <div class="subtlecircle sectiondivider faicon">
+          <span class="fa-stack">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-{{ post.fa-icon }} fa-stack-1x"></i>
+          </span>
+          <h5 class="icon-title">{{ post.title }}</h5>
+      </div>
+      {% endif %}
+      <article>{{ post.content }}</article>
+  </section>
+  {% endif %}
+  {% endfor %}
 
 
+<section id="rsvp" class="left">
 
-
-{% for insert in site.inserts%}
-  <div class="sidebar"> {{insert.title}}</div>
-   {{ insert.output }}
-{% endfor %}
-
-
-
-<section id="rsvp" class="right">
+  <h2 style="text-align:{{post.side}}; width:100%">RSVP</h2>
 <article>
   <form id="gform" method="POST" class="pure-form pure-form-stacked"
     action="https://script.google.com/macros/s/AKfycbyCLX2N-JgbN4X5AjqqXeMQHYlCHn2kip5KiZ0kjKBiYBc69wqr/exec">
+
+    <fieldset>
+
+<div class="radio">
+      <input id="attendingy" name="attending" type="radio"
+          class="custom-control-input" value="yes">
+      <label for="attendingy"> <h3> yes, I will be there</h3></label>
+
+
+        <input id="attendingn" name="attending" type="radio"
+          class="custom-control-input" value="no">
+          <label for="attendingn"><h3>no, sadly I can't make it<h3></label>
+      </div>
+    </fieldset>
+
     <fieldset class="pure-group">
       <label for="token"></label>
       <input id="token" name="token" value="{{page.token}}" size="15">
     </fieldset>
-    <h2>Guest 1</h2>
     <fieldset class="pure-group">
       <label for="guest_1_first">
       <input class="form-control" type="text" id="guest_1_first"
@@ -62,7 +91,6 @@ layout: top
       </fieldset>
       {% if page.n_guests == 2 %}
         <br><br>
-        <h2>Guest 2</h2>
         <fieldset class="pure-group">
           <label for="guest_2_first"></label>
           <input id="guest_2_first" name="guest_2_first" size="15" value="first">
@@ -74,24 +102,9 @@ layout: top
       {% endif %}
 
       <br><br>
-      <h2>Reply</h2>
 
       <fieldset>
-
-  <div class="radio">
-        <input id="attendingy" name="attending" type="radio"
-            class="custom-control-input" value="yes">
-        <label for="attendingy"> <h3> yes, I will be there</h3></label>
-
-
-          <input id="attendingn" name="attending" type="radio"
-            class="custom-control-input" value="no">
-            <label for="attendingn"><h3>no, sadly I cannot attend<h3></label>
-        </div>
-      </fieldset>
-
-
-      <input id="submit" type="submit" value="submit">
+      <input id="submit" type="submit" value="&#xf1d8;" class="reply"></fieldset>
 
   </form>
 
