@@ -11,6 +11,6 @@ a block of rooms has been reserved at the
 
 at a rate of $169 per night (2 night min)
 
-### [book here](https://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Brown%20and%20Stewart%20Wedding%20Room%20Block^bosbu`bksbksa|bksbksb`169`USD`false`4`9/28/18`9/30/18`9/4/18)
+### [book here](http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Brown%20and%20Stewart%20Wedding%20Room%20Block%5Ebosbu%60bksbksa%7Cbksbksb%60169%60USD%60false%604%609/28/18%609/30/18%609/4/18&app=resvlink&stop_mobi=yes)
 
 complimentary shuttle service will be available from the marrriott to L'andana
