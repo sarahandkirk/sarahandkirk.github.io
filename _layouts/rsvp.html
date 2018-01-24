@@ -21,6 +21,12 @@ layout: top
 
 
 <body>
+
+  <section class="landing invite">
+        {% capture invitetext %}{% include invite.md %}{% endcapture %}
+        {{ invitetext | markdownify }}
+
+  </section>
 <nav><ul>
     {% for post in site.posts reversed %}
 
@@ -32,6 +38,8 @@ layout: top
 </ul></nav>
 
 <main role="main">
+
+
 
   {% for post in site.posts reversed %}
   {% if post.pages contains 'rsvp' %}
@@ -136,5 +144,5 @@ layout: top
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-<script src="../site.js"></script>
+<script src="{{site.baseurl}}/site.js"></script>
 </html>

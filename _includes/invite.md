@@ -1,7 +1,3 @@
----
-layout: email
-title: Invite
----
 
 You're invited to
 

@@ -264,8 +264,7 @@ li { margin-left: inherit; padding-left: 5px; }
 
 
 .landing {
-    padding-top: 10vh !important;
-    background: url(/img/landing.jpg) no-repeat center center;
+    padding-top: 0vh !important;
     background-size: cover;
     height: 100vh;
     article {
@@ -282,7 +281,7 @@ $navborder-active: 2 * $navborder;
 nav {
     font-size: 15px;
     width: 100%;
-    position: fixed;
+    position: sticky;
     z-index: 100;
     top: 0;
     left: 0;
@@ -373,16 +372,21 @@ h2.right{
 }
 
 section:first-of-type {
+  margin-top:0px;
     h2{
       display:none
     }
 }
 
 .invite{
+  p:first-of-type {
+    margin-top: 100px; 
+  }
   h1, h2, h3, h4{
     padding-bottom: 0px;
     line-height: 80%;
     margin-bottom: 0px;
+    text-align: center;
   }
   hr{
     color:white;
@@ -411,6 +415,7 @@ footer {
     h3{
         padding: 100px 0;
       text-align: center;
+      color: black;
     }
 }
 
@@ -497,13 +502,11 @@ footer {
 
 
     .landing {
-        padding-top: 4vh !important;
-        background:url(/img/landing_med.jpg) no-repeat left center;
+        padding-top: 0px !important;
         background-size: cover;
         article {
             @include pull(1);
             @include column(4);
-            h1, h2, h3, h4, h5, h6 { text-align: left; }
         }
     }
 
