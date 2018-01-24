@@ -21,9 +21,7 @@ img {
     vertical-align: middle;
 }
 
-#gform{
-    text-align: center;
-}
+
 
 #token{display:none}
 
@@ -41,36 +39,45 @@ img {
 
 input{
   font-family: $text-font;
-  font-size: 30px;
+  font-size: 45px;
+  text-transform: uppercase;
 }
 
 input[type=radio]{
   display: none;
-  margin: 5px;
+  margin: 55px;
+  border: 0;
+  overflow: hidden;
+  padding: 0;
+  // position: absolute;
 }
 
-input[type=radio] + label:before {
-  content: "\f0c8"; /* Radio Unchecked */
+input[type=radio] ~ label:before {
+  font-family: arial;
+  font-size: 52px;
+  content: "\2586"; /* Radio Unchecked */
+    color: $white;
+    display: inline-block;
 
 }
 
-input[type=radio]:checked + label:before {
-font-family: FontAwesome;
+input[type=radio]:checked ~ label:before {
+  font-family: FontAwesome;
+  font-size: 45px;
   content: "\f00c"; /* Radio Checked */
   color: $white;
 }
 
-
-
-input[type=radio]:focus ~ label:before,
-input[type=radio]:focus ~ label
-{
-    color: $gold;
+.radio{
+  width:auto;
+  margin: 50px;
 }
 
 .radio label{
   font-size: 40px;
-  padding: 5px;
+  color: $white;
+  font-family: $titling-font;
+  text-transform: lowercase;
 }
 
 input[type=submit] {
@@ -80,47 +87,51 @@ input[type=submit] {
   color:$white;
   background-color: $rsvpcolor;
   border:none;
+  margin:auto;
 }
 
-.reply label:before{
-
+fieldset{
+  text-align:center;
+}
+fieldset.alignleft{
+  text-align:left;
+  width: 100%;
+  margin-left: 0px;
 }
 
-
-
-
-textarea {
-  width: 75%;
-}
-.content-head {
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin: 2em 0 1em;
-}
-.is-center {
-  text-align: center;
-}
-.button-success {
-  color: white;
-  border-radius: 4px;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  background: rgb(28, 184, 65); /* this is a green */
-  text-align:center
-}
-.button-xlarge {
-  font-size: 125%;
-  margin: 50px;
-}
-.button-reply {
-  font-size: 125%;
-}
-button {
-  float: right;
-}
-#name, #email {
-  width: 50%;
-}
+//
+// textarea {
+//   width: 75%;
+// }
+// .content-head {
+//   font-weight: 400;
+//   text-transform: uppercase;
+//   letter-spacing: 0.1em;
+//   margin: 2em 0 1em;
+// }
+// .is-center {
+//   text-align: center;
+// }
+// .button-success {
+//   color: white;
+//   border-radius: 4px;
+//   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+//   background: rgb(28, 184, 65); /* this is a green */
+//   text-align:center
+// }
+// .button-xlarge {
+//   font-size: 125%;
+//   margin: 50px;
+// }
+// .button-reply {
+//   font-size: 125%;
+// }
+// button {
+//   float: right;
+// }
+// #name, #email {
+//   width: 50%;
+// }
 
 // keep embedded videos fluid!
 .icontain {
@@ -311,15 +322,15 @@ section { // defines a block of post material (including the divider).
     margin-top: 100px;
     position: relative;
     width: 80%;
-    padding: 50px 0px;
+    padding: 50px 100px;
     h2:first-of-type {//title
       position:absolute;
       top: -75px;
     }
     article { // wraps the actual content.
-        @include column(3);
-        @include push(1); // for some reason push needs to come after column
-        @include pull(1);
+        // @include column(3);
+        // @include push(1); // for some reason push needs to come after column
+        // @include pull(1);
         word-wrap: break-word;
         h1, h2, h3, h4, h5, h6 {
             margin-bottom: 20px;
@@ -365,6 +376,10 @@ section:first-of-type {
     }
 }
 
+#rsvp{
+  padding: 50px 50px;
+}
+
 
 footer {
     min-height: 0;
@@ -383,6 +398,7 @@ footer {
       text-align: center;
     }
 }
+
 
 
 .subtlecircle {

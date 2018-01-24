@@ -59,20 +59,17 @@ layout: top
 
   <h2 style="text-align:{{post.side}}; width:100%">RSVP</h2>
 <article>
-  <form id="gform" method="POST" class="pure-form pure-form-stacked"
+  <form id="gform" method="POST"
     action="https://script.google.com/macros/s/AKfycbyCLX2N-JgbN4X5AjqqXeMQHYlCHn2kip5KiZ0kjKBiYBc69wqr/exec">
 
-    <fieldset>
-
-<div class="radio">
-      <input id="attendingy" name="attending" type="radio"
-          class="custom-control-input" value="yes">
-      <label for="attendingy"> <h3> yes, I will be there</h3></label>
-
-
-        <input id="attendingn" name="attending" type="radio"
-          class="custom-control-input" value="no">
-          <label for="attendingn"><h3>no, sadly I can't make it<h3></label>
+    <fieldset class="alignleft">
+      <div class="radio">
+        <input id="attendingy" name="attending" type="radio"value="yes">
+        <label for="attendingy"> yes, I will be there! </label>
+      </div>
+      <div class="radio">
+        <input id="attendingn" name="attending" type="radio" value="no">
+        <label for="attendingn"> no, sadly I can't make it</label>
       </div>
     </fieldset>
 
@@ -80,7 +77,8 @@ layout: top
       <label for="token"></label>
       <input id="token" name="token" value="{{page.token}}" size="15">
     </fieldset>
-    <fieldset class="pure-group">
+
+    <fieldset >
       <label for="guest_1_first">
       <input class="form-control" type="text" id="guest_1_first"
        name="guest_1_first" size="15" value="first"></label>
@@ -91,7 +89,7 @@ layout: top
       </fieldset>
       {% if page.n_guests == 2 %}
         <br><br>
-        <fieldset class="pure-group">
+        <fieldset >
           <label for="guest_2_first"></label>
           <input id="guest_2_first" name="guest_2_first" size="15" value="first">
 
@@ -120,7 +118,7 @@ layout: top
 </main>
 
 <footer>
-    
+
     <br><br>
     {% capture foottext %}{% include footer.md %}{% endcapture %}
     {{ foottext | markdownify }}
