@@ -27,6 +27,7 @@
 <main role="main">
 
     {% for post in site.posts reversed %}
+    {% if post.pages contains 'main' %}
     {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
     <section id="{{id}}" class="{{ post.side }}">
       <h2 style="text-align:{{post.side}}; width:100%">{{post.title}}</h2>
@@ -46,6 +47,7 @@
         {% endif %}
         <article>{{ post.content }}</article>
     </section>
+    {%endif%}
     {% endfor %}
 </main>
 
