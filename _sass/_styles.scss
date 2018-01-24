@@ -1,4 +1,4 @@
-@import 'invite-h1';
+
 
 body {
     background: $fullwhite;
@@ -175,6 +175,7 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: lowercase;
     letter-spacing: 0px;
     font-weight: 300;
+    color: $berry;
     a { font-weight: inherit; }
 }
 
@@ -375,6 +376,19 @@ section:first-of-type {
     h2{
       display:none
     }
+}
+
+.invite{
+  h1, h2, h3, h4{
+    padding-bottom: 0px;
+    line-height: 80%;
+    margin-bottom: 0px;
+  }
+  hr{
+    color:white;
+    border:0px;
+    padding: 25x;
+  }
 }
 
 #rsvp{

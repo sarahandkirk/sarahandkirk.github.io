@@ -1,17 +1,29 @@
 ---
-layout: insert
+layout: email
 title: Invite
 ---
 
-## Please Join us
+You're invited to
 
-# September 29, 2018
+the wedding celebration of
 
-#### at
-## eleven o'clock
-#### in the morning
+<hr>
 
-#### at
-# L'Andana Restaraunt
-### 86 Cambridge Street
-### Burlington, MA 01803
+# Sarah brown
+
+### and
+
+# kirk stewart
+
+<hr>
+
+Saturday, September twenty ninth
+
+two thousand eighteen
+
+eleven o'clock in the morning
+
+L'Andana Restaraunt
+Burlington, Massachusetts
+
+## reception to follow
