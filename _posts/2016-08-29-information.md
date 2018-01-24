@@ -2,7 +2,7 @@
 title: "logistics"
 colors: [sage, white, white]
 side: left
-rsvp: yes,
+pages: rsvp,
 ---
 
 a block of rooms has been reserved at the

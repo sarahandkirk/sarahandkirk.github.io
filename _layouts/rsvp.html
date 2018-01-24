@@ -31,7 +31,7 @@ layout: top
 <main role="main">
 
   {% for post in site.posts reversed %}
-  {% if post.rsvp contains 'yes' %}
+  {% if post.pages contains 'rsvp' %}
   {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
   <section id="{{id}}" class="{{ post.side }}">
     <h2 style="text-align:{{post.side}}; width:100%">{{post.title}}</h2>

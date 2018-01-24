@@ -1,0 +1,68 @@
+---
+permalink: /404.html
+---
+
+---
+---
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Allura|Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    {% if site.favicon %}<link rel="shortcut icon" href="{{ site.favicon }}" type="image/x-icon">{% endif %}
+    <title>{{ site.title }}</title>
+</head>
+
+
+<body>
+<nav><ul>
+    {% for post in site.posts reversed %}
+    {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
+    <li class="p-{{id}}"><a href="#{{id}}">{{post.title}}</a></li>
+    {% endfor %}
+</ul></nav>
+
+
+<main role="main">
+
+    {% for post in site.posts reversed %}
+    {% if post.pages contains '404' %}
+    {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
+    <section id="{{id}}" class="{{ post.side }}">
+      <h2 style="text-align:{{post.side}}; width:100%">{{post.title}}</h2>
+        {% if post.icon %}
+        <div class="subtlecircle sectiondivider imaged">
+            <img src="{{post.icon}}" alt="section icon" />
+            <h5 class="icon-title">{{ post.title }}</h5>
+        </div>
+        {% elsif post.fa-icon %}
+        <div class="subtlecircle sectiondivider faicon">
+            <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-{{ post.fa-icon }} fa-stack-1x"></i>
+            </span>
+            <h5 class="icon-title">{{ post.title }}</h5>
+        </div>
+        {% endif %}
+        <article>{{ post.content }}</article>
+    </section>
+    {%endif%}
+    {% endfor %}
+</main>
+
+
+<footer>
+    {% capture foottext %}{% include footer.md %}{% endcapture %}
+    {{ foottext | markdownify }}
+</footer>
+
+
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="site.js"></script>
+</html>
