@@ -52,37 +52,50 @@ input[type=radio]{
   // position: absolute;
 }
 
+// input[type=radio] ~  div{
+//   background-color: white;
+//   display: inline-block;
+//   width: 40px;
+//   height: 40px;
+// }
+
 input[type=radio] ~ label:before {
   font-family: arial;
-  font-size: 52px;
+  font-size: 45px;
+  width: 55px;
   content: "\2586"; /* Radio Unchecked */
     color: $white;
-    display: inline-block;
 
 }
 
-input[type=radio]:checked ~ label:before {
+input[type=radio]:checked ~ label:before{
   font-family: FontAwesome;
-  font-size: 45px;
+  font-size: 35px;
   content: "\f00c"; /* Radio Checked */
   color: $white;
+  background-color: $berry;
 }
+
 
 .radio{
   width:auto;
-  margin: 50px;
+  height: 55px;
+  margin: 20px 30px;
 }
 
 .radio label{
   font-size: 40px;
+  line-height: 110%;
   color: $white;
   font-family: $titling-font;
   text-transform: lowercase;
+  position: absolute;
 }
 
 input[type=submit] {
   font-family: FontAwesome;
   font-size: 60px;
+  transform: rotate(30deg) ;
   content: "\f1d8";
   color:$white;
   background-color: $rsvpcolor;
@@ -264,14 +277,17 @@ li { margin-left: inherit; padding-left: 5px; }
 
 
 .landing {
-    padding-top: 0vh !important;
+    padding-top: -0vh !important;
+    background: white;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
+    top: -50px;
     article {
         @include column(2);
         @include push(3);
         color: $cranberry;
     }
+    z-index: 110;
 }
 
 
@@ -280,6 +296,7 @@ $navborder-active: 2 * $navborder;
 
 nav {
     font-size: 15px;
+    font-weight: bold;
     width: 100%;
     position: sticky;
     z-index: 100;
@@ -297,9 +314,8 @@ nav {
             padding: $navborder 0;
             zoom: 1;
             line-height: normal;
-            min-width: 110px;
             line-height: 50px;
-            margin: 0;
+            margin: 0px 50px;
             a, a:visited {
                 display: block;
                 color: $black;
@@ -327,6 +343,9 @@ section { // defines a block of post material (including the divider).
       position:absolute;
       top: -75px;
       left:0px;
+    }
+    i{
+      color:black;
     }
     article { // wraps the actual content.
         // @include column(3);
@@ -380,7 +399,7 @@ section:first-of-type {
 
 .invite{
   p:first-of-type {
-    margin-top: 100px; 
+    margin-top: 100px;
   }
   h1, h2, h3, h4{
     padding-bottom: 0px;
@@ -503,7 +522,8 @@ footer {
 
     .landing {
         padding-top: 0px !important;
-        background-size: cover;
+        // background-size: cover;
+        // height:100%;
         article {
             @include pull(1);
             @include column(4);

@@ -33,19 +33,14 @@
     {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
     <section id="{{id}}" class="{{ post.side }}">
       <h2 style="text-align:{{post.side}}; width:100%">{{post.title}}</h2>
-        {% if post.icon %}
-        <div class="subtlecircle sectiondivider imaged">
-            <img src="{{post.icon}}" alt="section icon" />
-            <h5 class="icon-title">{{ post.title }}</h5>
-        </div>
-        {% elsif post.fa-icon %}
-        <div class="subtlecircle sectiondivider faicon">
-            <span class="fa-stack">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-{{ post.fa-icon }} fa-stack-1x"></i>
-            </span>
-            <h5 class="icon-title">{{ post.title }}</h5>
-        </div>
+
+        {% if post.fa-icon %}
+          <i class="fa fa-{{ post.fa-icon }}"
+                style="position:absolute;
+                transform: rotate({{post.angle}}deg) scaleX({{post.scale}});
+                top:{{post.top}};
+                left:{{post.left}};
+                font-size:{{post.size}}"></i>
         {% endif %}
         <article>{{ post.content }}</article>
     </section>

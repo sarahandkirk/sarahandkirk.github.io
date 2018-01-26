@@ -3,6 +3,11 @@ title: "logistics"
 colors: [sage, white, white]
 side: left
 pages: rsvp, main
+angle: -80
+scale: -1
+left: 125%
+top: 0px
+size: 150px
 ---
 
 a block of rooms has been reserved at the

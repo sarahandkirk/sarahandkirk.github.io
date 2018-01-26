@@ -22,11 +22,6 @@ layout: top
 
 <body>
 
-  <section class="landing invite">
-        {% capture invitetext %}{% include invite.md %}{% endcapture %}
-        {{ invitetext | markdownify }}
-
-  </section>
 <nav><ul>
     {% for post in site.posts reversed %}
 
@@ -36,6 +31,12 @@ layout: top
     {%endif%}
     {% endfor %}
 </ul></nav>
+
+  <section class="landing invite">
+        {% capture invitetext %}{% include invite.md %}{% endcapture %}
+        {{ invitetext | markdownify }}
+
+  </section>
 
 <main role="main">
 
