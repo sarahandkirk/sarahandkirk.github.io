@@ -335,13 +335,13 @@ nav {
 section { // defines a block of post material (including the divider).
     @include row();
     margin: auto;
-    margin-top: 100px;
+    margin-top: 125px;
     position: relative;
     width: 80%;
     padding: 50px 100px;
     h2:first-of-type {//title
       position:absolute;
-      top: -75px;
+      top: -95px;
       left:0px;
     }
     i{
