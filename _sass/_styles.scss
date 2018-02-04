@@ -11,6 +11,8 @@ body {
 }
 
 
+
+
 html { box-sizing: border-box; }
 *, *:before, *:after { box-sizing: inherit; }
 
@@ -184,7 +186,7 @@ bdo[dir='ltr'], bdo[dir='rtl'] {
 
 
 @include fontsizes($heading-sizes);
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6{
     font-family: $titling-font;
     text-transform: lowercase;
     letter-spacing: 0px;
@@ -194,10 +196,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-em { font-style: italic; }
-strong { font-weight: 900; font-size: 97%; }
+em {
+  font-style: italic;
+}
+
+strong { font-weight: 900;
+  //font-size: 110%;
+  letter-spacing: 3px; }
+
 small { font-size: 80%; }
 
+
+.note{
+  //text-transform: none;
+  text-align: justify;
+  font-size: 80%;
+}
 
 p { margin: 0 0 20px 0;
     //padding: 0 10px;
@@ -223,9 +237,12 @@ p a, p a:visited { line-height: inherit; }
 
 
 blockquote {
-    @include push(1);
-    @include pull(1);
-    border-left: 1px solid;
+    // @include push(1);
+    // @include pull(1);
+    border-left: none;
+    width: 100%;
+    text-align: justify;
+    left:-25px;
     cite { display: block; font-size: 12px; color: #555;
         a, a:visited { color: #555 }
     }
@@ -339,11 +356,12 @@ section { // defines a block of post material (including the divider).
     margin-top: 125px;
     position: relative;
     width: 80%;
-    padding: 50px 100px;
+    padding: 50px 50px;
     h2:first-of-type {//title
       position:absolute;
       top: -93px;
       left:0px;
+      //text-shadow: 1px 1px 0px $white;
     }
     i{
       color:black;
@@ -354,7 +372,7 @@ section { // defines a block of post material (including the divider).
         // @include pull(1);
         word-wrap: break-word;
         h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 20px;
+            margin-top: 20px;
             text-align: center;
             padding: 0 0px;
         }
