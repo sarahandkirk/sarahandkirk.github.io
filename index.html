@@ -20,7 +20,7 @@
     {% for post in site.posts reversed %}
     {% if post.pages contains 'main' %}
     {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
-    <li class="p-{{id}}"><a href="#{{id}}div">{{post.title}}</a></li>
+    <li class="p-{{id}}"><a href="#_{{id}}">{{post.title}}</a></li>
     {%endif%}
     {% endfor %}
 </ul></nav>
@@ -31,7 +31,7 @@
     {% for post in site.posts reversed %}
     {% if post.pages contains 'main' %}
     {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
-    <div id="{{id}}div"></div> <!--to make the links work -->
+    <div id="_{{id}}"></div> <!--to make the links work -->
     <section id="{{id}}" class="{{ post.side }}">
       {% if post.fa-icon %}
           <i class="fa fa-{{ post.fa-icon }}"
