@@ -356,7 +356,6 @@ section { // defines a block of post material (including the divider).
     margin-top: 125px;
     position: relative;
     width: 80%;
-    padding: 50px 50px;
     h2:first-of-type {//title
       position:absolute;
       top: -93px;
@@ -370,6 +369,8 @@ section { // defines a block of post material (including the divider).
         // @include column(3);
         // @include push(1); // for some reason push needs to come after column
         // @include pull(1);
+
+        padding: 50px 50px;
         word-wrap: break-word;
         h1, h2, h3, h4, h5, h6 {
             margin-top: 20px;
