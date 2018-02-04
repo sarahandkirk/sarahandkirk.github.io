@@ -31,7 +31,7 @@
     {% for post in site.posts reversed %}
     {% if post.pages contains 'main' %}
     {% capture id %}{{ post.id | remove:'/' | downcase }}{% endcapture %}
-    <div id="{{id}}div"></div> /* make the link work */
+    <div id="{{id}}div"></div> <!--to make the links work -->
     <section id="{{id}}" class="{{ post.side }}">
       {% if post.fa-icon %}
           <i class="fa fa-{{ post.fa-icon }}"
