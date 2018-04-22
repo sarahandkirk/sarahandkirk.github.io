@@ -1,0 +1,10 @@
+<section class="invite">
+    <article><h2>{% capture invitetext %}{% include invite.md %}{% endcapture %}
+    {{ invitetext | markdownify }}</h2> </article>
+</section>
+
+for rsvp page
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+
+{{ insert.content | markdownify }}
